@@ -31,30 +31,115 @@
       const dot = document.createElement("button");
       const uldhuvaah = document.createElement("button");
 
-      container.classList.add("container");
+      container.classList.add("container-style");
       buttons.classList.add("buttons");
       output.classList.add("output");
       button0.classList.add("button0");
 
-      button1.innerHTML = "1";
-      button2.innerHTML = "2";
-      button3.innerHTML = "3";
-      button4.innerHTML = "4";
-      button5.innerHTML = "5";
-      button6.innerHTML = "6";
-      button7.innerHTML = "7";
-      button8.innerHTML = "8";
-      button9.innerHTML = "9";
-      button0.innerHTML = "0";
-      urjih.innerHTML = "*";
-      huvaah.innerHTML = "%";
-      nemeh.innerHTML = "+";
-      hasah.innerHTML = "-";
-      hariu.innerHTML = "=";
-      reset.innerHTML = "AC";
-      dot.innerHTML = ".";
-      uldhuvaah.innerHTML = "÷";
+      function onclick1() {
+        output.innerHTML = output.innerHTML + "1";
+      }
 
+      function onclick2() {
+        output.innerHTML = output.innerHTML + "2";
+      }
+
+      function onclick3() {
+        output.innerHTML = output.innerHTML + "3";
+      }
+
+      function onclick4() {
+        output.innerHTML = output.innerHTML + "4";
+      }
+
+      function onclick5() {
+        output.innerHTML = output.innerHTML + "5";
+      }
+
+      function onclick6() {
+        output.innerHTML = output.innerHTML + "6";
+      }
+
+      function onclick7() {
+        output.innerHTML = output.innerHTML + "7";
+      }
+
+      function onclick8() {
+        output.innerHTML = output.innerHTML + "8";
+      }
+
+      function onclick9() {
+        output.innerHTML = output.innerHTML + "9";
+      }
+
+      function onclick0() {
+        output.innerHTML = output.innerHTML + "0";
+      }
+      function urjihf() {
+        output.innerHTML = output.innerHTML + "*";
+      }
+      function huvaahf() {
+        output.innerHTML = output.innerHTML + "/";
+      }
+      function nemehf() {
+        output.innerHTML = output.innerHTML + "+";
+      }
+      function hasahf() {
+        output.innerHTML = output.innerHTML + "-";
+      }
+      function dotf() {
+        output.innerHTML = output.innerHTML + ".";
+      }
+      function uldhuvaahf() {
+        output.innerHTML = output.innerHTML + "%";
+      }
+      function ACf() {
+        output.innerHTML = "";
+      }
+      button1.onclick = onclick1;
+      button1.innerHTML = "1";
+      button2.onclick = onclick2;
+      button2.innerHTML = "2";
+      button3.onclick = onclick3;
+      button3.innerHTML = "3";
+      button4.onclick = onclick4;
+      button4.innerHTML = "4";
+      button5.onclick = onclick5;
+      button5.innerHTML = "5";
+      button6.onclick = onclick6;
+      button6.innerHTML = "6";
+      button7.onclick = onclick7;
+      button7.innerHTML = "7";
+      button8.onclick = onclick8;
+      button8.innerHTML = "8";
+      button9.onclick = onclick9;
+      button9.innerHTML = "9";
+      button0.onclick = onclick0;
+      button0.innerHTML = "0";
+      //
+      urjih.onclick = urjihf;
+      urjih.innerHTML = "*";
+      //
+      huvaah.onclick = huvaahf;
+      huvaah.innerHTML = "%";
+      //
+      nemeh.onclick = nemehf;
+      nemeh.innerHTML = "+";
+      //
+      hasah.onclick = hasahf;
+      hasah.innerHTML = "-";
+      //
+      hariu.innerHTML = "=";
+      //
+      reset.onclick = ACf;
+      reset.innerHTML = "AC";
+      //
+      dot.onclick = dotf;
+      dot.innerHTML = ".";
+      //
+      uldhuvaah.onclick = uldhuvaahf;
+      uldhuvaah.innerHTML = "÷";
+      //
       container.appendChild(output);
       container.appendChild(buttons);
 
@@ -78,55 +163,6 @@
       buttons.appendChild(hariu);
 
       document.body.appendChild(container);
-
-      // uildel
-      let currentInput = "";
-
-      function updateOutput() {
-        output.innerText = currentInput || "0";
-      }
-
-      function handleButtonClick(value) {
-        if (value === "AC") {
-          currentInput = "";
-        } else if (value === "=") {
-          try {
-            currentInput = eval(
-              currentInput.replace(/÷/g, "/").replace(/%/g, "/")
-            );
-          } catch {
-            currentInput = "Error";
-          }
-        } else {
-          currentInput += value;
-        }
-        updateOutput();
-      }
-
-      [
-        [button0, "0"],
-        [button1, "1"],
-        [button2, "2"],
-        [button3, "3"],
-        [button4, "4"],
-        [button5, "5"],
-        [button6, "6"],
-        [button7, "7"],
-        [button8, "8"],
-        [button9, "9"],
-        [nemeh, "+"],
-        [hasah, "-"],
-        [urjih, "*"],
-        [uldhuvaah, "÷"],
-        [huvaah, "%"],
-        [dot, "."],
-        [hariu, "="],
-        [reset, "AC"],
-      ].forEach(([btn, val]) => {
-        btn.addEventListener("click", () => handleButtonClick(val));
-      });
-
-      updateOutput();
     </script>
   </body>
 </html>
