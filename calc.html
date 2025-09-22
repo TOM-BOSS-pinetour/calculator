@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- git -->
+    <script>
+      const container = document.createElement("div");
+      const buttons = document.createElement("div");
+      const output = document.createElement("div");
+      const button1 = document.createElement("button");
+      const button2 = document.createElement("button");
+      const button3 = document.createElement("button");
+      const button4 = document.createElement("button");
+      const button5 = document.createElement("button");
+      const button6 = document.createElement("button");
+      const button7 = document.createElement("button");
+      const button8 = document.createElement("button");
+      const button9 = document.createElement("button");
+      const button0 = document.createElement("button");
+      const urjih = document.createElement("button");
+      const huvaah = document.createElement("button");
+      const nemeh = document.createElement("button");
+      const hasah = document.createElement("button");
+      const hariu = document.createElement("button");
+      const reset = document.createElement("button");
+      const dot = document.createElement("button");
+      const uldhuvaah = document.createElement("button");
+
+      container.classList.add("container");
+      buttons.classList.add("buttons");
+      output.classList.add("output");
+      button0.classList.add("button0");
+
+      button1.innerHTML = "1";
+      button2.innerHTML = "2";
+      button3.innerHTML = "3";
+      button4.innerHTML = "4";
+      button5.innerHTML = "5";
+      button6.innerHTML = "6";
+      button7.innerHTML = "7";
+      button8.innerHTML = "8";
+      button9.innerHTML = "9";
+      button0.innerHTML = "0";
+      urjih.innerHTML = "*";
+      huvaah.innerHTML = "%";
+      nemeh.innerHTML = "+";
+      hasah.innerHTML = "-";
+      hariu.innerHTML = "=";
+      reset.innerHTML = "AC";
+      dot.innerHTML = ".";
+      uldhuvaah.innerHTML = "÷";
+
+      buttons.appendChild(reset);
+      buttons.appendChild(huvaah);
+      buttons.appendChild(dot);
+      container.appendChild(output);
+      buttons.appendChild(uldhuvaah);
+      buttons.appendChild(button7);
+      buttons.appendChild(button8);
+      buttons.appendChild(button9);
+      buttons.appendChild(urjih);
+      buttons.appendChild(button4);
+      buttons.appendChild(button5);
+      buttons.appendChild(button6);
+      buttons.appendChild(hasah);
+      buttons.appendChild(button1);
+      buttons.appendChild(button2);
+      buttons.appendChild(button3);
+      buttons.appendChild(nemeh);
+      buttons.appendChild(button0);
+      buttons.appendChild(hariu);
+
+      container.appendChild(buttons);
+
+      document.body.appendChild(container);
+
+      // uildel
+      let currentInput = "";
+
+      function updateOutput() {
+        output.innerText = currentInput || "0";
+      }
+
+      function handleButtonClick(value) {
+        if (value === "AC") {
+          currentInput = "";
+        } else if (value === "=") {
+          try {
+            currentInput = eval(
+              currentInput.replace(/÷/g, "/").replace(/%/g, "/")
+            );
+          } catch {
+            currentInput = "Error";
+          }
+        } else {
+          currentInput += value;
+        }
+        updateOutput();
+      }
+
+      [
+        [button0, "0"],
+        [button1, "1"],
+        [button2, "2"],
+        [button3, "3"],
+        [button4, "4"],
+        [button5, "5"],
+        [button6, "6"],
+        [button7, "7"],
+        [button8, "8"],
+        [button9, "9"],
+        [nemeh, "+"],
+        [hasah, "-"],
+        [urjih, "*"],
+        [uldhuvaah, "÷"],
+        [huvaah, "%"],
+        [dot, "."],
+        [hariu, "="],
+        [reset, "AC"],
+      ].forEach(([btn, val]) => {
+        btn.addEventListener("click", () => handleButtonClick(val));
+      });
+
+      updateOutput();
+    </script>
+  </body>
+</html>
