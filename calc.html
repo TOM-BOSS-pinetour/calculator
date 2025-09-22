@@ -55,10 +55,12 @@
       dot.innerHTML = ".";
       uldhuvaah.innerHTML = "÷";
 
+      container.appendChild(output);
+      container.appendChild(buttons);
+
       buttons.appendChild(reset);
       buttons.appendChild(huvaah);
       buttons.appendChild(dot);
-      container.appendChild(output);
       buttons.appendChild(uldhuvaah);
       buttons.appendChild(button7);
       buttons.appendChild(button8);
@@ -74,8 +76,6 @@
       buttons.appendChild(nemeh);
       buttons.appendChild(button0);
       buttons.appendChild(hariu);
-
-      container.appendChild(buttons);
 
       document.body.appendChild(container);
 
