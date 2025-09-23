@@ -79,7 +79,7 @@
         output.innerHTML = output.innerHTML + "*";
       }
       function huvaahf() {
-        output.innerHTML = output.innerHTML + "/";
+        output.innerHTML = output.innerHTML + "%";
       }
       function nemehf() {
         output.innerHTML = output.innerHTML + "+";
@@ -91,7 +91,7 @@
         output.innerHTML = output.innerHTML + ".";
       }
       function uldhuvaahf() {
-        output.innerHTML = output.innerHTML + "%";
+        output.innerHTML = output.innerHTML + "/";
       }
       function ACf() {
         output.innerHTML = "";
@@ -116,30 +116,31 @@
       button9.innerHTML = "9";
       button0.onclick = onclick0;
       button0.innerHTML = "0";
-      //
+      //÷%
       urjih.onclick = urjihf;
       urjih.innerHTML = "*";
-      //
-      huvaah.onclick = huvaahf;
-      huvaah.innerHTML = "%";
-      //
-      nemeh.onclick = nemehf;
-      nemeh.innerHTML = "+";
-      //
-      hasah.onclick = hasahf;
-      hasah.innerHTML = "-";
-      //
-      hariu.innerHTML = "=";
-      //
-      reset.onclick = ACf;
-      reset.innerHTML = "AC";
-      //
-      dot.onclick = dotf;
-      dot.innerHTML = ".";
-      //
+      //÷%
       uldhuvaah.onclick = uldhuvaahf;
       uldhuvaah.innerHTML = "÷";
-      //
+
+      //÷%
+      nemeh.onclick = nemehf;
+      nemeh.innerHTML = "+";
+      //÷%
+      hasah.onclick = hasahf;
+      hasah.innerHTML = "-";
+      //÷%
+      hariu.innerHTML = "=";
+      //÷%
+      reset.onclick = ACf;
+      reset.innerHTML = "AC";
+      //÷%
+      dot.onclick = dotf;
+      dot.innerHTML = ".";
+      //÷
+      huvaah.onclick = huvaahf;
+      huvaah.innerHTML = "%";
+      //÷
       container.appendChild(output);
       container.appendChild(buttons);
 
