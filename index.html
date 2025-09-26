@@ -164,24 +164,10 @@
       buttons.appendChild(hariu);
 
       document.body.appendChild(container);
-      //UILDel
-      // Тэнцүү (=) товчлуур дээр дархад тооцоолол хийх
       hariu.onclick = Result;
 
-      // Enter дархад keyboard-оор тооцоолол хийх
-      document.addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
-          Result();
-        }
-      });
-
-      // output дээр тооцоолол хийх function
       function Result() {
-        try {
-          output.innerHTML = eval(output.innerHTML);
-        } catch (error) {
-          output.innerHTML = "Error";
-        }
+        output.innerHTML = eval(output.innerHTML);
       }
     </script>
   </body>
